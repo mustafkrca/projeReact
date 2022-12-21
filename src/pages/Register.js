@@ -17,7 +17,7 @@ function Register(){
             Age : Age,
         };
 
-        const url = '';
+        const url = 'https://localhost:7022/api/Product';
         axios.post(url,data).then((result) => {
             alert('data saved');         
         }).catch((error)=>{
@@ -27,6 +27,11 @@ function Register(){
 
     return(
         <Fragment>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
         <div>Register</div>
         <label>Name</label>
         <input type="text" id="textName" placeholder='Enter Name' onChange={(e) => handleNameChange(e.target.value)}/><br></br>
