@@ -1,47 +1,42 @@
-import axios from "axios";
-import React, { Fragment, useState } from 'react';
+import React from "react";
+import GMap from "../components/GMap";
+import "../style/Styles.css";
 
-function Register(){
-    const [name, setName] = useState("");
-    const [Fiyat, setFiyat] = useState("");
-    const [Age, setAge] = useState("");
-
-    const handleNameChange = (value) => {setName(value)}
-    const handleFiyatChange = (value) => {setFiyat(value)}
-    const handleAgeChange = (value) => {setAge(value)}
-
-    const handleSave = () => {
-        const data = {
-            Name : name,
-            Fiyat : Fiyat,
-            Age : Age,
-        };
-
-        const url = 'https://localhost:7022/api/Product';
-        axios.post(url,data).then((result) => {
-            alert('data saved');         
-        }).catch((error)=>{
-            alert(error);
-        })
-    }
-
-    return(
-        <Fragment>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-        <div>Register</div>
-        <label>Name</label>
-        <input type="text" id="textName" placeholder='Enter Name' onChange={(e) => handleNameChange(e.target.value)}/><br></br>
-        <label>Phone No</label>
-        <input type="Phone No" id="textFiyat" placeholder='Enter Phone No' onChange={(e) => handleFiyatChange(e.target.value)}/><br></br>
-        <label>Age</label>
-        <input type="text" id="textAge" placeholder='Enter Age' onChange={(e) => handleAgeChange(e.target.value)}/><br></br>
-        <button onClick={() => handleSave()}>Save</button>
-        </Fragment>
-    )
+export default function About() {
+  
+  return (
+    <div className="about-container">
+      <h1>Hakkımızda</h1>
+      <div className="about-div">
+        <div className="about-map">
+          <GMap />
+        </div>
+        <div className="about-content">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+            elementum ante ut odio faucibus luctus. Aliquam erat volutpat. In
+            lorem dolor, placerat in nisi quis, suscipit mattis mauris.
+            Suspendisse in auctor odio. Donec ut nunc eget lectus finibus
+            commodo. Sed commodo, sapien vel elementum tempor, quam velit
+            lacinia ligula, eu faucibus metus turpis id lorem. Sed auctor
+            lobortis facilisis. Fusce aliquet fringilla dapibus. Sed auctor
+          </p>
+          <p>
+            metus vel enim maximus, et sollicitudin diam interdum. Duis
+            fringilla lacus a ultricies venenatis. Pellentesque vel lorem urna.
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+            posuere cubilia curae; Vivamus suscipit elit id nisi laoreet
+            aliquam. Curabitur nec bibendum erat, eu tempor ipsum. Etiam eget
+            metus at augue hendrerit luctus sit amet eget enim. Praesent
+            scelerisque interdum erat, sed volutpat elit ullamcorper eu. Mauris
+            at hendrerit turpis. Mauris semper dapibus lorem, ut euismod arcu
+            egestas vestibulum. Fusce congue, ante ac venenatis fringilla, lacus
+            nisl faucibus lectus, a sagittis massa dolor a odio. Suspendisse
+            pharetra cursus dui, in varius nunc lacinia eget. Sed in porta est.
+            Quisque eleifend congue nibh, eu sollicitudin elit efficitur vel.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 }
-
-export default Register;

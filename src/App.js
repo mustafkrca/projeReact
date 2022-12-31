@@ -7,7 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import Services from "./pages/Services";
 import Footer from "./components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Register from "./pages/Register";
+import SignUp from "./pages/SignUp";
 
 export default function App() {
   return (
@@ -19,7 +19,7 @@ export default function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/reservation" element={<Reservation />} />
-          <Route path="/register" element={<Register/>}></Route>
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
       </div>
       <Footer />
